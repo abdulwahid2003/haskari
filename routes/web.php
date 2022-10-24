@@ -4,9 +4,11 @@ use App\Http\Controllers\makeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users;
 use App\Http\Controllers\makeControllers;
-use App\Http\Controllers\DeleteController;
+use App\Http\Controllers\DeleteController;  
 use App\Http\Controllers\QueryBuilder;
 use App\Http\Controllers\oneToOne;
+use App\Http\Controllers\getVal;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +56,12 @@ Route::get('bye',[DeleteController::class,'deleter']);
 
 Route::view("/new","new");
 Route::get("new",[QueryBuilder::class,"qb"]);
+
+// Route::post("/form",function(){
+//   return view("form");
+// });
+// Route::post("form",[getVal::class,"getVals"]); 
+// Route::view("form","form");
+
+Route::get("/get/{key:sname}",[CategoryController::class,"na"]);
+Route::view("/get","form");
